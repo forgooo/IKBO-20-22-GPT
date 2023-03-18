@@ -11,7 +11,10 @@ def chat_request(request):
                     {"role": "user", "content": request},
                 ]
         )
-        return ''.join([choice.text for choice in response.choices])
+        result = ''
+        for choice in response.choices:
+            result += choice.message.content
+        return result
     except Exception as e:
         print(f'Error: {str(e)}')
         return 'что то сломалось, хз что вообще'
