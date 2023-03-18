@@ -1,0 +1,2 @@
+vkapitoken = ''
+openaitoken = ''
